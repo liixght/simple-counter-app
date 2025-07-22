@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5, user-scalable=yes">
     <style>
         body {
         display: flex;
@@ -35,6 +35,7 @@
       button {
         display: flex;
         margin: auto;
+        touch-action: manipulation;
         border: 1px solid gray;
         border-radius: 7px;
         height: 4rem;
@@ -96,7 +97,10 @@
         if (count > 0) {
             count -= 1;
         }
-        else count = 0;
+        else {
+            count = 0;
+            console.log("Cannot be less than zero!")
+        }
         countEl.textContent = count;
         console.log("Decremented!")
     }); 
